@@ -1,0 +1,9 @@
+/* vim:ft=css */
+configuration {
+  display-drun: "   Apps ";
+  modi: "drun";
+  terminal: "kitty";
+  location: 0;
+  hide-scrollbar: true;
+}
+@theme "./tokyonight.rasi"

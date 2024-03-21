@@ -1,0 +1,80 @@
+{
+  "layer": "top",
+  "position": "bottom",
+  "mod": "dock",
+  "height": 31,
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "modules-left": [
+    "custom/padd",
+    "custom/l_end",
+    "custom/power",
+    "custom/r_end",
+    "custom/l_end",
+    "wlr/taskbar",
+    "custom/r_end"
+  ],
+  "modules-center": ["custom/l_end", "clock", "custom/r_end"],
+  "modules-right": [
+    "custom/l_end",
+    "network",
+    "pulseaudio",
+    "custom/r_end",
+    "custom/padd"
+  ],
+  "custom/power": {
+    "format": " ",
+    "exec": "echo ; echo Shutdown",
+    "on-click": "shutdown -h now",
+    "interval": 86400,
+    "tooltip": true
+  },
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "Tela-circle-dracula",
+    "spacing": 0,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close"
+  },
+  "clock": {
+    "timezone": "Asia/Dhaka",
+    "interval": 30,
+    "format": " {:%I:%M %p}",
+    "format-alt": "󰃭 {:%d·%m·%y}",
+  },
+
+  "network": {
+    "format-ethernet": "󱘖  Wired",
+    "tooltip-format": "󱘖 {ipaddr}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+    "format-linked": "󱘖 {ifname} (No IP)",
+    "format-disconnected": " Disconnected"
+  },
+  "pulseaudio": {
+    "scroll-step": 10,
+    "format": "{icon} {volume}",
+    "format-muted": "󰟎 0",
+    "on-click": "pavucontrol -t 3",
+    "tooltip-format": "{icon} {desc} // {volume}%",
+    "format-icons": {
+      "headset": "󰋋 "
+    }
+  },
+  "custom/l_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/r_end": {
+    "format": " ",
+    "interval": "once",
+    "tooltip": false
+  },
+  "custom/padd": {
+    "format": "  ",
+    "interval": "once",
+    "tooltip": false
+  }
+}
